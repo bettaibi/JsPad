@@ -1,0 +1,6 @@
+
+@mixin mediaXs {
+    @media screen and (max-width: 599px){
+        @content;
+    }
+}

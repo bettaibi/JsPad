@@ -1,0 +1,25 @@
+// $primary-color : #12202f;
+// $secondary-color: #1f2e3b;
+// $text-primary: #f8f9fa;
+// $text-secondary: #c0c2c5;
+// $accent-color: #2277FF;
+
+// @mixin theme($name){
+//     @if $name == 'dark' {
+//         $primary-color : #ee4c0c;
+//         $secondary-color: #1f2e3b;
+//         $text-primary: #f8f9fa;
+//         $text-secondary: #c0c2c5;
+//         $accent-color: #2277FF;
+//     }
+//     @else if $name == 'gray'{
+//         $primary-color : green;
+//         $secondary-color: #1f2e3b;
+//         $text-primary: #f8f9fa;
+//         $text-secondary: #c0c2c5;
+//         $accent-color: #2277FF;
+//     }
+//     @else{
+//         @error "Unknown theme";
+//     }
+// }

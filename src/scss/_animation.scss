@@ -1,0 +1,43 @@
+@mixin  easeOut {
+    transition: all 0.5s ease-out;
+}
+
+@mixin scaleIn {
+    animation: scaleIn 0.2s ease forwards;
+}
+
+@mixin  slideIn {
+    animation: slideIn 0.5s ease forwards;
+}
+
+
+@mixin  fadeIn {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes scaleIn{
+    from{
+        transform: scale(0.8);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn{
+    from{
+        transform: translateX(320px);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

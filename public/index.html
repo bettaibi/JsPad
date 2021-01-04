@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- CODEMIROR STYLES -->
+    <link rel="stylesheet" href="../node_modules/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="../src/theme/dracula.css">
+    <link rel="stylesheet" href="../node_modules/codemirror/addon/hint/show-hint.css">
+    <link rel="stylesheet" href="../node_modules/codemirror/addon/search/matchesonscrollbar.css">
+    <link rel="stylesheet" href="../node_modules/codemirror/addon/lint/lint.css">
+    <!-- <link rel="shortcut icon" href="../favicon.ico" /> -->
+    <title>JS-Pad</title>
+</head>
+<body class="default-theme">
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Main -->
+    <main id="main">
+            <div id="code" class="shadow-sm"></div>
+
+            <div class="screen" data-screen>
+                <div id="console" class="shadow-sm"></div>
+                <div id="preview" class="shadow-sm"></div>
+            </div>
+    </main>
+
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+    <!-- SideNav -->
+    <div class="sidenav-container d-none" data-sidenav-container></div>
+
+    <!-- JS FILES -->
+    <script src="https://unpkg.com/jshint@2.9.6/dist/jshint.js"></script>
+    <script src="https://unpkg.com/csslint@1.0.5/dist/csslint.js"></script>
+
+    <script src="../src/app.js"></script>
+</body>
+</html>

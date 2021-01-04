@@ -1,0 +1,51 @@
+.terminal-prompt{
+    color: #3290c9;
+    white-space: nowrap;
+    margin-bottom: 10px;
+}
+.terminal-prompt::before{
+    content: '>';
+    color: #ccc;
+    font-size: 14px;
+    vertical-align: middle;
+    padding-right: 6px;
+}
+.terminal-prompt::after{
+    content: '';
+    -webkit-animation: cursor .8s infinite;
+    animation: cursor .8s infinite;
+    background: #3290c9;
+    border-radius: 0;
+    display: inline-block;
+    height: 1em;
+    margin-left: .2em;
+    width: 3px;
+    bottom: -2px;
+    position: relative;
+}
+.prompts{
+   a{
+    display: block;
+    font-size: 15px;
+    color: gray;
+    &.info{
+        color: #62C4FF;
+    }
+    &.error{
+        color: #c52727;;
+    }
+    &.warn{
+        color:  #fdd835;
+    }
+   }
+}
+
+
+@keyframes cursor{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0.1;
+    }
+}

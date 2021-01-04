@@ -1,0 +1,35 @@
+@import './variables';
+/* Style tab links */
+
+
+.windows {
+    .tablink {
+        background-color: inherit;
+        border-radius: 0;
+        float: left;
+        cursor: pointer;
+        z-index: 0;
+        box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.3);
+
+        &:hover {
+            border-bottom: 1px solid $accent-color;
+            color: $accent-color;
+        }
+
+        span {
+            font-weight: normal;
+
+            &:hover {
+                color: #ccc;
+                font-weight: bolder;
+                transform: scale(1.2);
+            }
+        }
+
+        &.active {
+            color: $accent-color;
+            box-shadow: none;
+            border-bottom: 1px solid $accent-color;
+        }
+    }
+}
