@@ -1,6 +1,7 @@
 import './scss/app.scss';
 import TemplateUi from './components/templateUi';
 import Playground from './components/playground';
+import * as serviceWorker from './serviceWorker';
 
 document.addEventListener('DOMContentLoaded', ()=>{
     console.log("app running...");
@@ -161,4 +162,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
             playground.showSaveModal();
         }
     }
+
+
+    // REGISTER WORKER
+    serviceWorker.register();
 });

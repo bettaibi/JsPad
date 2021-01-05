@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://bettaibi.github.io/JsPad/",
+  "homepage": "https://bettaibi.github.io/JsPad",
   "scripts": {
     "dev": "rm -rf ./developement && rm -rf ./.cache && parcel public/index.html --out-dir developement -p 3000",
     "build": "parcel build public/index.html --out-dir dist --public-url ./",
+    "postbuild": "workbox generateSW",
     "deploy": "gh-pages -d dist"
   },
   "author": "Bettaibi Nidhal",
@@ -17,7 +18,8 @@
     "@babel/runtime-corejs2": "^7.12.5",
     "codemirror": "^5.59.0",
     "parcel-bundler": "^1.12.4",
-    "sass": "^1.30.0"
+    "sass": "^1.30.0",
+    "workbox-cli": "^6.0.2"
   },
   "dependencies": {
     "@emmetio/codemirror-plugin": "^1.2.1",
