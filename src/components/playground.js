@@ -118,13 +118,34 @@ class Playground{
             }
         });
         
-
         this.cssConfig = CodeMirror.fromTextArea(document.getElementById('css-code'), {
             ...options,
             mode: 'css',
             gutters: ["CodeMirror-lint-markers"],
             lint: true
         });
+
+        this.jsConfig.on("keydown", function (cm, event) {
+            if (
+              !(event.ctrlKey) &&
+              (event.keyCode >= 65 && event.keyCode <= 90) || 
+              (event.keyCode >= 97 && event.keyCode <= 122) || 
+              (event.keyCode >= 46 && event.keyCode <= 57)
+            ) {
+              CodeMirror.commands.autocomplete(cm, null, {completeSingle: false});
+            }
+          });
+
+          this.cssConfig.on("keydown", function (cm, event) {
+            if (
+              !(event.ctrlKey) &&
+              (event.keyCode >= 65 && event.keyCode <= 90) || 
+              (event.keyCode >= 97 && event.keyCode <= 122) || 
+              (event.keyCode >= 46 && event.keyCode <= 57)
+            ) {
+              CodeMirror.commands.autocomplete(cm, null, {completeSingle: false});
+            }
+          });
 
         // CONFIG TABS
         this.buildTabs();

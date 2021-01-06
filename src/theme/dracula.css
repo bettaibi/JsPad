@@ -13,7 +13,12 @@
     background: #1f2e3b;
     z-index: 9;
     border-radius: 5px;
-    box-shadow: 1px 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 1px 2px 8px rgba(0,0,0,0.2);
+    border: 1px solid #f8f8f0;
+}
+
+#css .emmet-abbreviation-preview .CodeMirror{
+  display: none;
 }
 
 .cm-s-dracula.CodeMirror, .cm-s-dracula .CodeMirror-gutters {
@@ -62,4 +67,8 @@
   
   .cm-s-dracula .CodeMirror-activeline-background { background: rgba(255,255,255,0.1); }
   .cm-s-dracula .CodeMirror-matchingbracket { text-decoration: underline; color: white !important; }
-  
+
+  ul.CodeMirror-hints.dracula{
+    background-color: #1f2e3b !important;
+    z-index: 10;
+  }
