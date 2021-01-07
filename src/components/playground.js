@@ -191,9 +191,20 @@ class Playground{
     }
 
     updatePreview(){
+        const options = `
+        document.querySelectorAll('a').forEach((tag)=>{
+            tag.target = '_blank';
+            tag.onclick = function(e){
+                e.stopPropagation();
+                window.open(a.href, "_blank")
+            } 
+        });
+        `;
         this.myDocument = `${this.currentProject.html.trim()} <style>${this.currentProject.css.trim()}</style>`;
-        const preview = document.querySelector('#iframe-preview');
-        preview.contentDocument.body.innerHTML = this.myDocument;
+        const preview = document.querySelector('#iframe-preview').contentWindow.document;
+        preview.open();
+        preview.write(`${this.myDocument}<script>${options}</script>`);
+        preview.close();
     }
 
     runJs(){

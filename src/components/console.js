@@ -7,27 +7,27 @@ class ConsoleUi{
     }
   
     init(){
-          const app = this;
-          (function(){
-              console.log = function (message) {
-                  app.updateView({content: message, type:'log'});
-              };
-              console.error = function (message) {
-                  app.updateView({content: message, type:'error'});
-              };
-              console.warn = function (message) {
-                  app.updateView({content: message, type:'warn'});
-              };
-              console.info = function (message) {
-                  app.updateView({content: message, type:'info'});
-              };
-              console.dir = function(item){
-                  app.updateView({content: item, type:'log'});
-              };
-              console.clear = function(){
-                  app.view.innerHTML = '';
-              };
-          })();
+        //   const app = this;
+        //   (function(){
+        //       console.log = function (message) {
+        //           app.updateView({content: message, type:'log'});
+        //       };
+        //       console.error = function (message) {
+        //           app.updateView({content: message, type:'error'});
+        //       };
+        //       console.warn = function (message) {
+        //           app.updateView({content: message, type:'warn'});
+        //       };
+        //       console.info = function (message) {
+        //           app.updateView({content: message, type:'info'});
+        //       };
+        //       console.dir = function(item){
+        //           app.updateView({content: item, type:'log'});
+        //       };
+        //       console.clear = function(){
+        //           app.view.innerHTML = '';
+        //       };
+        //   })();
     }
 
     normalizeOutput(obj){
@@ -59,9 +59,18 @@ class ConsoleUi{
     executeCode(jsDoc, myDocument){
         try{
             this.clear();
+            const options = `
+            document.querySelectorAll('a').forEach((tag)=>{
+                tag.target = '_blank';
+                tag.onclick = function(e){
+                    e.stopPropagation();
+                    window.open(a.href, "_blank")
+                } 
+            });
+            `;
             const preview = document.querySelector('#iframe-preview').contentWindow.document;
             preview.open();
-            preview.write(`${myDocument}<script>${jsDoc}</script>`);
+            preview.write(`${myDocument}<script>${jsDoc} ${options}</script>`);
             preview.close();
             const res = new Function('"use strict;"'+jsDoc);
             res();

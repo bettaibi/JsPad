@@ -106,7 +106,7 @@ class TemplateUi{
                 <img src=${ZoomIn} alt="Full screen">
             </a>
         </div>
-        <iframe id="iframe-preview" style="width:100%; height: 100%;" frameborder="0" title="preview" allowfullscreen="true"></iframe>
+        <iframe id="iframe-preview" target="_blank" style="width:100%; height: 100%;" frameborder="0" title="preview" allowfullscreen="true"></iframe>
         `;
 
         return template;
