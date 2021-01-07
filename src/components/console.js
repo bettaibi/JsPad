@@ -7,27 +7,27 @@ class ConsoleUi{
     }
   
     init(){
-        //   const app = this;
-        //   (function(){
-        //       console.log = function (message) {
-        //           app.updateView({content: message, type:'log'});
-        //       };
-        //       console.error = function (message) {
-        //           app.updateView({content: message, type:'error'});
-        //       };
-        //       console.warn = function (message) {
-        //           app.updateView({content: message, type:'warn'});
-        //       };
-        //       console.info = function (message) {
-        //           app.updateView({content: message, type:'info'});
-        //       };
-        //       console.dir = function(item){
-        //           app.updateView({content: item, type:'log'});
-        //       };
-        //       console.clear = function(){
-        //           app.view.innerHTML = '';
-        //       };
-        //   })();
+          const app = this;
+          (function(){
+              console.log = function (message) {
+                  app.updateView({content: message, type:'log'});
+              };
+              console.error = function (message) {
+                  app.updateView({content: message, type:'error'});
+              };
+              console.warn = function (message) {
+                  app.updateView({content: message, type:'warn'});
+              };
+              console.info = function (message) {
+                  app.updateView({content: message, type:'info'});
+              };
+              console.dir = function(item){
+                  app.updateView({content: item, type:'log'});
+              };
+              console.clear = function(){
+                  app.view.innerHTML = '';
+              };
+          })();
     }
 
     normalizeOutput(obj){
