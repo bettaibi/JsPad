@@ -136,11 +136,11 @@ class TemplateUi{
     <div class="content">
         <h2 class="mb-1 mt-1">Welcome to <span class="text-accent">JsPad</span></h2>
          <p style="max-width: 95%;">
-             An interactive online playground that helps you to quickly create small projects and snippets, or even test your javascript knowledge. <br><br>
+             An interactive online playground which helps you to quickly create small projects and snippets, or even test your javascript knowledge. <br><br>
             
              <span class="text-yellow">NOTE: </span> Keep in mind that this editor is not designed for big projects. <br><br>
             
-            How our editor could help?
+            How could our editor help?
             <ul>
                 <li>Create HTML/CSS snippets</li>
                 <li>Algorithm and Data Structure</li>
