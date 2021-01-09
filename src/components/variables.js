@@ -28,8 +28,11 @@ let cssDoc =
 html, body{
     width:100%;
     margin: 0;
-    padding: 1rem;
+    height: 100%;
+}
+body{
     /*   background-color: #fff; */
-}`;
+}
+`;
 
 export {jsDoc, htmlDocument, cssDoc};

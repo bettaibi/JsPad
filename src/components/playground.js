@@ -63,6 +63,7 @@ class Playground{
             css: cssDoc.trim(),
             userId: localStorage.getItem('uid')
         };
+        this.images = [];
         const options = {
             theme: 'dracula',
             lineNumbers: true,
@@ -190,7 +191,7 @@ class Playground{
         });
     }
 
-    updatePreview(){
+    async updatePreview(){
         const options = `
         document.querySelectorAll('a').forEach((tag)=>{
             tag.target = '_blank';
@@ -200,11 +201,25 @@ class Playground{
             } 
         });
         `;
-        this.myDocument = `${this.currentProject.html.trim()} <style>${this.currentProject.css.trim()}</style>`;
+        let newDoc = await this.normalizeHtml(this.currentProject.html);
+        this.myDocument = `${newDoc.trim()} <style>${this.currentProject.css.trim()}</style>`;
         const preview = document.querySelector('#iframe-preview').contentWindow.document;
         preview.open();
         preview.write(`${this.myDocument}<script>${options}</script>`);
         preview.close();
+    }
+
+    async normalizeHtml(html){
+     try{
+        let newDoc = html.trim();
+        for (let item of this.images){
+            newDoc = newDoc.replace(`${item.name}`, `${item.data}`);
+        }
+        return newDoc;
+     }
+     catch(err){
+        throw err;
+     }
     }
 
     runJs(){
@@ -289,7 +304,7 @@ class Playground{
         },4000);
     }
 
-    showModal(template){
+   async showModal(template){
         this.modal = document.createElement('div');
         this.modal.className = 'modal-overlay';
         this.modal.innerHTML = `
@@ -469,7 +484,7 @@ class Playground{
         }
         else{
             const state = this.currentProject.id?'edit':'new';
-            const res = await this.db.saveProject(name, this.currentProject);
+            const res = await this.db.saveProject(name, this.currentProject, this.images);
             this.setProjectId = res.newId;
             this.setProjectName = res.name;
             this.showMsg('Project Saved', 'Your progress has been saved', 'success');
@@ -487,6 +502,7 @@ class Playground{
         const res = await this.db.getProjectById(id);
         if(res){
             this.toggleSideBar();
+            this.images = res.images;
             this.setCurrentProject = res;
             this.jsConfig.setValue(res.js);
             this.htmlConfig.setValue(res.html);
@@ -540,6 +556,26 @@ class Playground{
         </form>`;
         this.showModal(content);
     }
+
+    async getFiles(files){
+        this.showMsg('Done', 'Images have been selected', 'success');
+        if(files){
+            for(let file of files){
+              await  this.imageStream(file);
+            }
+        }
+    }
+
+    async imageStream(file){
+        var reader = new FileReader();
+        reader.onload = ()=>{
+          var dataURL = reader.result;
+          this.images = [...new Set([...this.images, {name: file.name, data: dataURL}])];
+        };
+        
+        reader.readAsDataURL(file);
+    }
+
 
 }
 

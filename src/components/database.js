@@ -72,7 +72,7 @@ class Database{
     }
 
     // Project:  name, content(js, html, css), userId, project id, 
-    async saveProject(name, currentProject){
+    async saveProject(name, currentProject, images){
         try{
            const uid = localStorage.getItem('uid');
            const projectId = currentProject.id?currentProject.id:uuidv4();
@@ -83,7 +83,8 @@ class Database{
             js: currentProject.js,
             html: currentProject.html,
             css: currentProject.css,
-            userId: uid
+            userId: uid,
+            images: images
           });
           return {result: result, newId: projectId, name: name};
         }

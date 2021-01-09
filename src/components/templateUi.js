@@ -33,7 +33,9 @@ class TemplateUi{
                         Settings
                     </div>
                     <nav>
-                        <a id="new-project">New Project</a>
+                        <input type='file' multiple accept='image/*' id="images" class="d-none">
+                        <a id="new-project" onclick="file.click()">New Project</a>
+                        <a data-import>Import Images</a>
                         <a data-save>Save...</a>
                     </nav>
 
@@ -106,7 +108,7 @@ class TemplateUi{
                 <img src=${ZoomIn} alt="Full screen">
             </a>
         </div>
-        <iframe id="iframe-preview" target="_blank" style="width:100%; height: 100%;" frameborder="0" title="preview" allowfullscreen="true"></iframe>
+        <iframe id="iframe-preview" target="_blank" frameborder="0" title="preview"></iframe>
         `;
 
         return template;
@@ -134,9 +136,21 @@ class TemplateUi{
     <div class="content">
         <h2 class="mb-1 mt-1">Welcome to <span class="text-accent">JsPad</span></h2>
         <p>
-            An interactive online editor playground, coding from anywhere at any time. <br>
+             An interactive online playground that helps you to quickly create small projects and snippets, or even test your javascript knowledge. <br><br>
+            
+             <span class="text-yellow">NOTE: </span> Keep in mind that this editor is not designed for big projects. <br><br>
+            
+            How our editor could help?
+            <ul>
+                <li>Create HTML/CSS snippets</li>
+                <li>Algorithm and Data Structure</li>
+                <li>Test your knowledge and Train yourself</li>
+                <li>The App could work on mobile/desktop.</li>
+            </ul><br>
+            Coding from anywhere at any time. <br>
             Using your laptop or even your smartphone, thank to our responsive design. <br>
             Nothing will stop you to code! <br><br>
+
             Learn <span class="text-yellow">Javascript</span> from theory to practice. <br>
             Visit our website for more <span class="text-yellow">Javascript</span> courses & projects. <br>
             <a href="#" class="text-yellow">www.bn-academy.com</a>                        

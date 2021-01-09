@@ -31,7 +31,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const logoutBtn = document.querySelector('[data-logout]');
     const loginForm = document.getElementById('loginForm');
     const gobackBtn = document.getElementById('go-back');
+    const importBtn = document.querySelector('[data-import]');
+    const fileBtn = document.getElementById('images');
     const themeBtn = document.querySelectorAll('.theme');
+    const prev = document.getElementById('preview');
 
     let prevActiveBtn = 0;
 
@@ -57,10 +60,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
         });
     });
     zoomBtn.addEventListener('click', ()=>{
-        const prev = document.getElementById('preview');
         prev.classList.toggle('zoom-active');
     });
-    
+
     document.getElementById('dropdown-btn').addEventListener('click', (e)=>{
         e.stopPropagation();
         playground.toggleDropdown(dropdown);
@@ -154,6 +156,15 @@ document.addEventListener('DOMContentLoaded', ()=>{
     runBtn.addEventListener('click', (event)=>{
         event.stopPropagation();
         playground.runJs();
+    });
+
+    importBtn.addEventListener('click', (e)=>{
+        e.stopPropagation();
+        fileBtn.click();
+    });
+
+    fileBtn.addEventListener('change', (event)=>{
+        playground.getFiles(event.target.files);
     });
     
     document.onkeyup = (e)=>{

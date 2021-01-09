@@ -177,7 +177,7 @@
     .screen {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 280px 1fr;
         height: calc(100vh - 78px);
         row-gap: 0.32rem;
         z-index: 30;
@@ -204,10 +204,15 @@
             background-color: $primary-color;
             z-index: 9999999;
 
+            #iframe-preview{
+                width: 100%;
+                height: calc(100% - 45px);
+            }
+
             &.zoom-active {
                 position: fixed;
                 top: 0;
-                right: 0;
+                left: 0;
                 bottom: 28px;
                 width: 100%;
             }
@@ -232,14 +237,14 @@
         #console {
             background-color: $primary-color;
             padding: 0.5rem 0 0.5rem 0.5rem;
-
+            overflow: hidden;
             .console-header {
                 margin-bottom: 10px;
             }
 
-            .console-ui {
-                height: 250px;
-                overflow-y: auto;
+            #console-ui {
+                overflow: auto;
+                height: 100%;
             }
         }
 
