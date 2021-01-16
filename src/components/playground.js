@@ -473,9 +473,12 @@ class Playground{
 
     // REMOVE A SESSION
     async removeSession(){
-       await this.db.deleteMySession();
-       this.showMsg('Session removed', 'your session has been removed', 'danger');
-       await this.getData();
+       let res = confirm('Are you sure that you want to remove your current session?');
+       if(res){
+        await this.db.deleteMySession();
+        this.showMsg('Session removed', 'your session has been removed', 'danger');
+        await this.getData();
+       }
     }
 
     async saveProject(name){
