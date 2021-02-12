@@ -1,7 +1,7 @@
 {
   "name": "JsPad",
   "version": "1.0.0",
-  "description": "",
+  "description": "Javascript playground editor",
   "main": "index.js",
   "homepage": "https://bettaibi.github.io/JsPad",
   "scripts": {
@@ -12,6 +12,12 @@
   },
   "author": "Bettaibi Nidhal",
   "license": "ISC",
+  "keywords": [
+    "javascript",
+    "editor",
+    "playground",
+    "snippets"
+  ],
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/plugin-transform-runtime": "^7.12.10",

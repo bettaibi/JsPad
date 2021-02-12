@@ -439,6 +439,8 @@ class Playground{
         const removeSessionBtn = document.getElementById('btn-session-delete');
         const logoutBtn = document.querySelector('[data-logout]');
         const createSessionBtn = document.querySelector('[data-create-session-btn]');
+        const sessionInput = document.getElementById('sessionName');
+
         const user = await this.db.getCurrentUser();
         if(user){
             this.sessionId.innerText = user.uid.slice(0, 20)+'...';
@@ -447,6 +449,7 @@ class Playground{
             logoutBtn.disabled = false
             removeSessionBtn.disabled = false;
             createSessionBtn.disabled = true
+            sessionInput.disabled = true;
             this.currentProject.userId = user.uid;
 
             await this.getProjects(user.uid);
@@ -460,6 +463,7 @@ class Playground{
             logoutBtn.disabled = true
             removeSessionBtn.disabled = true;
             createSessionBtn.disabled = false;
+            sessionInput.disabled = false;
         }
     }
     
@@ -473,7 +477,7 @@ class Playground{
 
     // REMOVE A SESSION
     async removeSession(){
-       let res = confirm('Are you sure that you want to remove your current session?');
+       let res = confirm('Are you sure that you want to remove the current session?');
        if(res){
         await this.db.deleteMySession();
         this.showMsg('Session removed', 'your session has been removed', 'danger');
@@ -483,7 +487,7 @@ class Playground{
 
     async saveProject(name){
         if(!localStorage.getItem('uid')){
-            this.showMsg('Project Not Saved', 'You should connect to a session to be able to save your progess;','danger');
+            this.showMsg('Project Not Saved', 'You should connect to a session to be able to save this project','danger');
         }
         else{
             const state = this.currentProject.id?'edit':'new';

@@ -6,7 +6,6 @@ import runIcon from '../img/icons/run.svg';
 import avatar from '../img/profile.jpg';
 import savedProject from '../img/icons/add_task.svg';
 import downloadedProject from '../img/icons/downloaded.svg';
-import downloadIcon from '../img/icons/download.svg';
 import backIcon from '../img/icons/back.svg';
 
 class TemplateUi{
@@ -136,22 +135,19 @@ class TemplateUi{
     <div class="content">
         <h2 class="mb-1 mt-1">Welcome to <span class="text-accent">JsPad</span></h2>
          <p style="max-width: 95%;">
-             An interactive online playground which helps you to quickly create small projects and snippets, or even test your javascript knowledge. <br><br>
+             An interactive online playground which helps you to quickly create snippets or even test your javascript knowledge. <br><br>
             
              <span class="text-yellow">NOTE: </span> Keep in mind that this editor is not designed for big projects. <br><br>
             
             How could our editor help?
             <ul>
                 <li>Create HTML/CSS snippets</li>
-                <li>Algorithm and Data Structure</li>
-                <li>Test your knowledge and Train yourself</li>
-                <li>The App could work on mobile/desktop.</li>
+                <li>Algorithm and Data Structure.</li>
+                <li>Test your knowledge.</li>
+                <li>The app works both on mobile and desktop.</li>
             </ul><br>
-            Coding from anywhere at any time. <br>
-            Using your laptop or even your smartphone, thank to our responsive design. <br>
-            Nothing will stop you to code! <br><br>
+            Coding from anywhere at any time.<br><br>
 
-            Learn <span class="text-yellow">Javascript</span> from theory to practice. <br>
             Visit our website for more <span class="text-yellow">Javascript</span> courses & projects. <br>
             <a href="#" class="text-yellow">www.bn-academy.com</a>                        
         </p>
@@ -161,8 +157,8 @@ class TemplateUi{
             <li>Files Mangement</li>
             <li>Emmet extension support</li>
             <li>Auto-complete</li>
-            <li>Real console/terminal</li>
-            <li>html preview</li>
+            <li>JS Terminal</li>
+            <li>html live preview</li>
         </ul>
         <h3 class="text-accent mt-1">Keyboard Shortcuts</h3>
         <div class="shortcuts">
@@ -311,7 +307,7 @@ class TemplateUi{
                         <input name="sessionName" style="margin-top:0.5rem" type="text"  autocomplete="off"
                          id="sessionName" required class="form-control" placeholder="Enter a name">
                     </div>
-                    <input type="submit" value="Create My Session" data-create-session-btn>
+                    <input type="submit" value="Create A Session" data-create-session-btn>
                 </form>
                 <button class="btn-outline btn-danger" data-logout>Logout</button>
             </div>

@@ -79,6 +79,11 @@ form {
             padding: 0.4rem;
             color: $text-secondary;
             width: 100%;
+            &:disabled{
+                border-color: gray;
+                background-color: #1f2e3b;
+                color: gray;
+            }
         }
     }
 
@@ -102,7 +107,9 @@ form {
 
         &:disabled {
             border-color: gray;
-            background: $primary-color;
+            background-color: $primary-color;
+            cursor: default;
+            color: gray;
         }
     }
 }

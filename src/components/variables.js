@@ -15,7 +15,7 @@ let htmlDocument = `
 let jsDoc = 
 `
 /***
-    Tap CTRL+S to save your progress, Or Click on the 'save' button in the above dropdown.
+    Click on the 'save' button in the above dropdown to save your progress.
  ***/
 `;
 
